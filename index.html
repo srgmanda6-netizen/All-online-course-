@@ -1,0 +1,1747 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SRGjobtest — Education opens your future</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --teal: #4ecdc4;
+      --teal-dark: #3db8b0;
+      --dark: #34495e;
+      --text: #2c3e50;
+      --muted: #7f8c8d;
+      --white: #ffffff;
+      --line: #e8ecef;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Open Sans", sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1140px, 92vw);
+      margin-inline: auto;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.75rem;
+      font-family: "Montserrat", sans-serif;
+      font-weight: 600;
+      font-size: 0.875rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-teal {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .btn-teal:hover {
+      background: var(--teal-dark);
+    }
+
+    .btn-outline-light {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid var(--white);
+    }
+
+    .btn-outline-light:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--teal);
+      border: 2px solid var(--teal);
+    }
+
+    .btn-outline:hover {
+      background: rgba(78, 205, 196, 0.1);
+    }
+
+    /* Header */
+    .site-header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 20;
+      padding: 1.25rem 0;
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-family: "Montserrat", sans-serif;
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: 0.05em;
+      color: var(--white);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      font-size: 0.9rem;
+      font-weight: 600;
+      opacity: 0.95;
+    }
+
+    .nav-links a:hover {
+      color: var(--teal);
+    }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 85vh;
+      min-height: 85svh;
+      display: flex;
+      align-items: center;
+      padding: 8rem 0 12rem;
+      background: linear-gradient(160deg, #0c2d5c 0%, #1a4f8c 42%, #2563b8 100%);
+    }
+
+    .hero .container { position: relative; z-index: 1; }
+
+    .hero-content {
+      max-width: min(720px, 100%);
+    }
+
+    .hero h1 {
+      font-size: clamp(1.75rem, 4.2vw, 2.65rem);
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 1.75rem;
+      font-size: 1.05rem;
+    }
+
+    /* Overlap cards */
+    .overlap-wrap {
+      position: relative;
+      margin-top: -6rem;
+      z-index: 10;
+      padding-bottom: 4rem;
+    }
+
+    .feature-cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.75rem;
+      max-width: 920px;
+      margin-inline: auto;
+    }
+
+    @media (max-width: 768px) {
+      .feature-cards { grid-template-columns: 1fr; }
+      .overlap-wrap { margin-top: -3rem; }
+    }
+
+    .feature-card {
+      background: var(--white);
+      padding: 2rem 1.75rem;
+      border-radius: 4px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .feature-card .icon {
+      width: 48px;
+      height: 48px;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+
+    .feature-card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .feature-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-card p[lang="hi"] {
+      font-family: "Noto Sans Devanagari", sans-serif;
+      line-height: 1.65;
+    }
+
+    /* CTA */
+    .cta-bar {
+      background: var(--dark);
+      padding: 2rem 0;
+    }
+
+    .cta-bar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .cta-bar-copy {
+      flex: 1;
+      min-width: min(100%, 260px);
+      font-family: "Noto Sans Devanagari", sans-serif;
+    }
+
+    .cta-bar__lead {
+      color: var(--white);
+      font-size: clamp(1.2rem, 2.8vw, 1.7rem);
+      font-weight: 700;
+      line-height: 1.35;
+      margin: 0 0 0.5rem;
+    }
+
+    .cta-bar__detail {
+      color: rgba(255, 255, 255, 0.93);
+      font-size: clamp(0.95rem, 2vw, 1.12rem);
+      font-weight: 500;
+      line-height: 1.65;
+      margin: 0;
+      max-width: 42rem;
+    }
+
+    .cta-bar__detail strong { color: var(--teal); font-weight: 700; }
+
+    .cta-bar__accent {
+      color: #fff8a8;
+      font-weight: 700;
+    }
+
+    /* Quick links */
+    .quick {
+      padding: 4rem 0;
+      background: #fafbfc;
+    }
+
+    .explore-lead-box {
+      background: linear-gradient(90deg, rgba(78, 205, 196, 0.20) 0%, rgba(37, 99, 235, 0.08) 100%);
+      border: 1px solid rgba(78, 205, 196, 0.35);
+      border-left: 7px solid var(--teal);
+      border-radius: 12px;
+      padding: 1.25rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      box-shadow: 0 14px 40px rgba(0, 0, 0, 0.06);
+      margin-bottom: 1.75rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .explore-lead-box::after {
+      content: "";
+      position: absolute;
+      top: -40px;
+      right: -70px;
+      width: 220px;
+      height: 160px;
+      background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0));
+      transform: rotate(12deg);
+      pointer-events: none;
+    }
+
+    .explore-sub-box {
+      background: linear-gradient(90deg, rgba(37, 99, 235, 0.20) 0%, rgba(78, 205, 196, 0.14) 100%);
+      border: 1px solid rgba(37, 99, 235, 0.28);
+      border-left: 7px solid #2563eb;
+      border-radius: 6px;
+      padding: 1.4rem 1.35rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      box-shadow: 0 16px 44px rgba(0, 0, 0, 0.06);
+      margin-bottom: 2.0rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .explore-sub-copy {
+      font-family: "Noto Sans Devanagari", sans-serif;
+      flex: 1;
+      min-width: min(100%, 540px);
+    }
+
+    .explore-sub-title {
+      font-weight: 950;
+      color: var(--text);
+      font-size: clamp(1.12rem, 2.6vw, 1.45rem);
+      margin-bottom: 0.35rem;
+      line-height: 1.25;
+    }
+
+    .explore-sub-title .accent {
+      background: linear-gradient(90deg, #2563eb 0%, #4ecdc4 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .explore-sub-desc {
+      color: var(--muted);
+      font-weight: 850;
+      font-size: 0.98rem;
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    .explore-sub-tagline {
+      margin-top: 0.55rem;
+      font-family: "Noto Sans Devanagari", sans-serif;
+      font-weight: 900;
+      color: rgba(37, 99, 235, 0.95);
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+
+    .explore-sub-cta {
+      padding: 0.95rem 1.4rem;
+      font-size: 1.02rem;
+      border-radius: 6px;
+      letter-spacing: 0.01em;
+      font-weight: 900;
+      box-shadow: 0 14px 36px rgba(37, 99, 235, 0.16);
+    }
+
+    .explore-sub-cta:hover {
+      box-shadow: 0 18px 46px rgba(37, 99, 235, 0.22);
+    }
+
+    @media (max-width: 720px) {
+      .explore-sub-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    .explore-lead-copy {
+      font-family: "Noto Sans Devanagari", sans-serif;
+      flex: 1;
+      min-width: min(100%, 520px);
+    }
+
+    .explore-lead-title {
+      font-weight: 900;
+      color: var(--text);
+      font-size: clamp(1.05rem, 2.6vw, 1.35rem);
+      margin-bottom: 0.35rem;
+      line-height: 1.25;
+    }
+
+    .explore-lead-desc {
+      color: var(--muted);
+      font-weight: 800;
+      font-size: 0.98rem;
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    @media (max-width: 720px) {
+      .explore-lead-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    .quick h2 {
+      text-align: center;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin-bottom: 0.5rem;
+    }
+
+    .quick > .container > p {
+      text-align: center;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+    }
+
+    .quick-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 1.5rem;
+      transition: box-shadow 0.2s;
+    }
+
+    .quick-card:hover {
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+    }
+
+    .quick-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .quick-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--dark);
+      color: rgba(255, 255, 255, 0.85);
+      padding: 2.5rem 0 1.5rem;
+    }
+
+    .footer-cols {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-col h4 {
+      color: var(--white);
+      font-size: 0.9rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-col ul { list-style: none; }
+
+    .footer-col li {
+      margin-bottom: 0.4rem;
+      font-size: 0.875rem;
+    }
+
+    .footer-col a:hover { color: var(--teal); }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.85rem;
+    }
+
+    .social {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .social a:hover { color: var(--teal); }
+
+    /* Popular Exams hub (tabs + cards) */
+    .section-pad {
+      padding: 5rem 0;
+    }
+
+    .exam-hub {
+      background: #fff;
+    }
+
+    .exam-hub__head {
+      margin-bottom: 1.75rem;
+    }
+
+    .exam-hub__head h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      margin-bottom: 0.5rem;
+      color: var(--text);
+    }
+
+    .exam-hub__head p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      max-width: 36rem;
+      margin: 0;
+      line-height: 1.55;
+    }
+
+    .exam-tabs {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 0.15rem;
+      overflow-x: auto;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0;
+      border-bottom: 1px solid #e8ecef;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: thin;
+    }
+
+    .exam-tabs button {
+      flex-shrink: 0;
+      background: none;
+      border: none;
+      padding: 0.65rem 0.75rem;
+      font-family: inherit;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--muted);
+      cursor: pointer;
+      white-space: normal;
+      text-align: center;
+      line-height: 1.2;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -1px;
+      transition: color 0.2s, border-color 0.2s;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-width: 4.75rem;
+      max-width: 9.5rem;
+    }
+
+    .exam-tabs__label {
+      font-size: 0.74rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    .exam-tabs__count {
+      font-size: 0.68rem;
+      font-weight: 500;
+      color: #94a3b8;
+      margin-top: 0.2rem;
+    }
+
+    .exam-tabs button:hover {
+      color: var(--text);
+    }
+
+    .exam-tabs button:hover .exam-tabs__count {
+      color: #7c8ea0;
+    }
+
+    .exam-tabs button.active {
+      color: #2563eb;
+      border-bottom-color: #2563eb;
+    }
+
+    .exam-tabs button.active .exam-tabs__count {
+      color: #64748b;
+    }
+
+    .exam-panels .exam-panel {
+      display: none;
+      animation: examFade 0.25s ease;
+    }
+
+    .exam-panels .exam-panel.active {
+      display: block;
+    }
+
+    @keyframes examFade {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    .exam-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    @media (max-width: 900px) {
+      .exam-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 520px) {
+      .exam-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .exam-card {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding: 1rem 1.1rem;
+      background: var(--white);
+      border: 1px solid #e8ecef;
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--text);
+      transition: box-shadow 0.2s, border-color 0.2s;
+      min-height: 3.5rem;
+    }
+
+    .exam-card:hover {
+      box-shadow: 0 6px 22px rgba(0, 0, 0, 0.07);
+      border-color: #dce3ea;
+    }
+
+    .exam-card__logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      background: #f8fafc;
+      border: 1px solid #e8ecef;
+      overflow: hidden;
+    }
+
+    .exam-card__logo .favicon-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      padding: 6px;
+      display: block;
+    }
+
+    .exam-card__name {
+      flex: 1;
+      font-size: 0.9rem;
+      font-weight: 600;
+      line-height: 1.35;
+    }
+
+    .exam-card__chevron {
+      flex-shrink: 0;
+      color: #bdc3c7;
+      display: flex;
+    }
+
+    .exam-card:hover .exam-card__chevron {
+      color: #95a5a6;
+    }
+
+    .exam-card--more {
+      justify-content: center;
+      gap: 0.35rem;
+      color: #2563eb;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .exam-card--more .exam-card__chevron {
+      color: #2563eb;
+    }
+
+    .exam-card--more:hover {
+      background: #f0f7ff;
+      border-color: #bfdbfe;
+    }
+
+    /* Register modal (Mobile -> OTP -> Register) */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 18px;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-dialog {
+      width: min(560px, 96vw);
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid rgba(232, 236, 239, 1);
+      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+    }
+
+    .modal-head {
+      padding: 1rem 1.1rem;
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .modal-head h3 {
+      margin: 0;
+      font-size: 1.15rem;
+    }
+
+    .modal-close {
+      border: none;
+      background: transparent;
+      font-size: 1.6rem;
+      line-height: 1;
+      cursor: pointer;
+      color: var(--muted);
+      padding: 0 0.25rem;
+    }
+
+    .modal-body {
+      padding: 1.1rem 1.1rem 1.2rem;
+    }
+
+    .reg-hint {
+      font-family: "Noto Sans Devanagari", sans-serif;
+      color: var(--muted);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .reg-step {
+      display: none;
+    }
+
+    .reg-step.active {
+      display: block;
+    }
+
+    .reg-grid {
+      display: grid;
+      gap: 0.8rem;
+    }
+
+    .reg-label {
+      font-weight: 800;
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+
+    .reg-input {
+      width: 100%;
+      border: 1px solid #dce1e6;
+      border-radius: 10px;
+      padding: 0.8rem 0.95rem;
+      font-size: 1rem;
+      font-family: inherit;
+      outline: none;
+    }
+
+    .reg-input:focus {
+      border-color: rgba(78, 205, 196, 0.8);
+      box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.18);
+    }
+
+    .reg-error {
+      color: #b91c1c;
+      font-weight: 800;
+      font-family: "Noto Sans Devanagari", sans-serif;
+      min-height: 1.2em;
+    }
+
+    .reg-demo {
+      color: var(--blue);
+      font-weight: 900;
+      font-family: "Noto Sans Devanagari", sans-serif;
+      font-size: 0.95rem;
+      margin-top: 0.2rem;
+    }
+
+    .reg-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 0.4rem;
+    }
+
+    .btn-outline-light.btn-small {
+      border-width: 2px;
+      padding: 0.65rem 1rem;
+    }
+
+    .reg-success {
+      display: none;
+      padding: 0.3rem 0;
+    }
+
+    .reg-success.active {
+      display: block;
+    }
+
+    .reg-success h4 {
+      margin: 0 0 0.35rem;
+      color: #0f766e;
+      font-family: "Noto Sans Devanagari", sans-serif;
+      font-size: 1.1rem;
+    }
+
+    .reg-success p {
+      color: var(--muted);
+      font-weight: 700;
+      font-family: "Noto Sans Devanagari", sans-serif;
+      margin-bottom: 1rem;
+    }
+
+    /* Cookie consent banner */
+    .cookie-banner {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 16px;
+      z-index: 2000;
+      display: none;
+      padding: 0 14px;
+    }
+
+    .cookie-banner.open {
+      display: block;
+    }
+
+    .cookie-inner {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      padding: 14px 14px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .cookie-copy {
+      max-width: 62ch;
+    }
+
+    .cookie-title {
+      font-family: "Noto Sans Devanagari", sans-serif;
+      font-weight: 900;
+      color: var(--text);
+      margin-bottom: 4px;
+      font-size: 1.05rem;
+    }
+
+    .cookie-text {
+      color: var(--muted);
+      font-weight: 800;
+      font-family: "Noto Sans Devanagari", sans-serif;
+      font-size: 0.95rem;
+    }
+
+    .cookie-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .cookie-settings {
+      display: none;
+      margin-top: 10px;
+      background: #fafbfc;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px;
+    }
+
+    .cookie-settings.open {
+      display: block;
+    }
+
+    .cookie-settings-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+
+    .cookie-check {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: "Noto Sans Devanagari", sans-serif;
+      font-weight: 900;
+      color: var(--text);
+      user-select: none;
+    }
+
+    .cookie-settings-actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 720px) {
+      .cookie-inner {
+        flex-direction: column;
+      }
+
+      .cookie-actions {
+        justify-content: flex-start;
+      }
+
+      .cookie-settings-actions {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">SRGjobtest</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="exams.html">Exams</a></li>
+        <li><a href="bharti.html">भर्ती</a></li>
+      </ul>
+      <button type="button" class="btn btn-outline-light nav-register" id="openRegister">Register</button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Education is the key to unlocking the golden doors of your future</h1>
+        <p>Get your key to success with us</p>
+        <a href="exams.html" class="btn btn-teal">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="overlap-wrap">
+    <div class="container feature-cards">
+      <article class="feature-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M4 6h16M4 12h10M4 18h16" />
+        </svg>
+        <h3>Popular Exams</h3>
+        <p lang="hi">भारत की सभी सरकारी नौकरियों की परीक्षाओं की जानकारी यहाँ देखें।</p>
+        <a href="exams.html" class="btn btn-teal">View All</a>
+      </article>
+      <article class="feature-card">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M9 11l3 3L22 4" />
+          <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+        </svg>
+        <h3>Test</h3>
+        <p lang="hi">अपनी तैयारी को मजबूत बनाएं! भारत की प्रमुख सरकारी नौकरियों के लिए बेस्ट PYQs और टेस्ट सीरीज़ यहाँ पाएँ</p>
+        <a href="exams.html" class="btn btn-teal">View All</a>
+      </article>
+    </div>
+  </div>
+
+  <section class="cta-bar">
+    <div class="container cta-bar-inner">
+      <div class="cta-bar-copy">
+        <p class="cta-bar__lead">पढ़ाई का सुनहरा मौका!</p>
+        <p class="cta-bar__detail">
+          सभी कोर्सेस पर पाइए <strong>फ़्लैट 50% डिस्काउंट</strong>। कोर्स जॉइन करने से पहले देखें
+          <span class="cta-bar__accent">2 घंटे का डेमो</span> — <strong>बिल्कुल फ़्री</strong>।
+        </p>
+      </div>
+      <a href="https://t.me/WereWolfByNight0" class="btn btn-teal" target="_blank" rel="noopener noreferrer">फ्री डेमो देखें</a>
+    </div>
+  </section>
+
+  <section class="section-pad exam-hub">
+    <div class="container">
+      <div class="exam-hub__head">
+        <h2>Popular Exams</h2>
+        <p>Get exam-ready with concepts, questions and study notes as per the latest pattern.</p>
+      </div>
+
+      <div class="exam-tabs" role="tablist" aria-label="Exam categories">
+        <button type="button" role="tab" class="active" data-tab="ssc" aria-selected="true"><span class="exam-tabs__label">SSC Exams</span><span class="exam-tabs__count">81 Exams</span></button>
+        <button type="button" role="tab" data-tab="banking" aria-selected="false"><span class="exam-tabs__label">Banking Exams</span><span class="exam-tabs__count">79 Exams</span></button>
+        <button type="button" role="tab" data-tab="teaching" aria-selected="false"><span class="exam-tabs__label">Teaching Exams</span><span class="exam-tabs__count">164 Exams</span></button>
+        <button type="button" role="tab" data-tab="civil" aria-selected="false"><span class="exam-tabs__label">Civil Services Exam</span><span class="exam-tabs__count">30 Exams</span></button>
+        <button type="button" role="tab" data-tab="railways" aria-selected="false"><span class="exam-tabs__label">Railways Exams</span><span class="exam-tabs__count">33 Exams</span></button>
+        <button type="button" role="tab" data-tab="engineering" aria-selected="false"><span class="exam-tabs__label">Engineering Recruitment Exams</span><span class="exam-tabs__count">111 Exams</span></button>
+        <button type="button" role="tab" data-tab="defence" aria-selected="false"><span class="exam-tabs__label">Defence Exams</span><span class="exam-tabs__count">78 Exams</span></button>
+        <button type="button" role="tab" data-tab="state-govt" aria-selected="false"><span class="exam-tabs__label">State Govt. Exams</span><span class="exam-tabs__count">551 Exams</span></button>
+        <button type="button" role="tab" data-tab="police" aria-selected="false"><span class="exam-tabs__label">Police Exams</span><span class="exam-tabs__count">83 Exams</span></button>
+        <button type="button" role="tab" data-tab="insurance" aria-selected="false"><span class="exam-tabs__label">Insurance Exams</span><span class="exam-tabs__count">34 Exams</span></button>
+        <button type="button" role="tab" data-tab="nursing" aria-selected="false"><span class="exam-tabs__label">Nursing Exams</span><span class="exam-tabs__count">47 Exams</span></button>
+        <button type="button" role="tab" data-tab="other-govt" aria-selected="false"><span class="exam-tabs__label">Other Govt. Exams</span><span class="exam-tabs__count">70 Exams</span></button>
+        <button type="button" role="tab" data-tab="nra-cet" aria-selected="false"><span class="exam-tabs__label">NRA CET</span><span class="exam-tabs__count">2 Exams</span></button>
+        <button type="button" role="tab" data-tab="pg-entrance" aria-selected="false"><span class="exam-tabs__label">PG Entrance Exams</span><span class="exam-tabs__count">8 Exams</span></button>
+        <button type="button" role="tab" data-tab="campus" aria-selected="false"><span class="exam-tabs__label">Campus Placement</span><span class="exam-tabs__count">12 Exams</span></button>
+        <button type="button" role="tab" data-tab="marketing" aria-selected="false"><span class="exam-tabs__label">Marketing</span><span class="exam-tabs__count">1 Exams</span></button>
+        <button type="button" role="tab" data-tab="mba" aria-selected="false"><span class="exam-tabs__label">MBA Entrance Exam</span><span class="exam-tabs__count">4 Exams</span></button>
+        <button type="button" role="tab" data-tab="cuet" aria-selected="false"><span class="exam-tabs__label">CUET and UG Entrance</span><span class="exam-tabs__count">38 Exams</span></button>
+        <button type="button" role="tab" data-tab="professional-skills" aria-selected="false"><span class="exam-tabs__label">Professional Skills</span><span class="exam-tabs__count">1 Exams</span></button>
+        <button type="button" role="tab" data-tab="software-dev" aria-selected="false"><span class="exam-tabs__label">Software Development</span><span class="exam-tabs__count">1 Exams</span></button>
+        <button type="button" role="tab" data-tab="data-science" aria-selected="false"><span class="exam-tabs__label">Data Science &amp; Analytics</span><span class="exam-tabs__count">3 Exams</span></button>
+        <button type="button" role="tab" data-tab="accounting" aria-selected="false"><span class="exam-tabs__label">Accounting and Commerce</span><span class="exam-tabs__count">12 Exams</span></button>
+        <button type="button" role="tab" data-tab="management" aria-selected="false"><span class="exam-tabs__label">Management</span><span class="exam-tabs__count">6 Exams</span></button>
+        <button type="button" role="tab" data-tab="judiciary" aria-selected="false"><span class="exam-tabs__label">Judiciary Exams</span><span class="exam-tabs__count">22 Exams</span></button>
+        <button type="button" role="tab" data-tab="regulatory" aria-selected="false"><span class="exam-tabs__label">Regulatory Body Exams</span><span class="exam-tabs__count">8 Exams</span></button>
+        <button type="button" role="tab" data-tab="drdo" aria-selected="false"><span class="exam-tabs__label">DRDO</span><span class="exam-tabs__count">6 Exams</span></button>
+      </div>
+
+      <div class="exam-panels">
+        <div class="exam-panel active" id="panel-ssc" role="tabpanel" data-tabpanel="ssc">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="ssc.nic.in"></span><span class="exam-card__name">SSC CGL</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="ssc.nic.in"></span><span class="exam-card__name">SSC CHSL</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="ssc.nic.in"></span><span class="exam-card__name">SSC MTS</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="ssc.nic.in"></span><span class="exam-card__name">SSC GD Constable</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="ssc.nic.in"></span><span class="exam-card__name">SSC Stenographer</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-banking" role="tabpanel" data-tabpanel="banking">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="ibps.in"></span><span class="exam-card__name">IBPS PO</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="ibps.in"></span><span class="exam-card__name">IBPS Clerk</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="sbi.co.in"></span><span class="exam-card__name">SBI PO</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="rbi.org.in"></span><span class="exam-card__name">RBI Assistant</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="ibps.in"></span><span class="exam-card__name">IBPS RRB PO</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-teaching" role="tabpanel" data-tabpanel="teaching">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="ctet.nic.in"></span><span class="exam-card__name">CTET</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="kvs.gov.in"></span><span class="exam-card__name">KVS / NVS</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="ugc.gov.in"></span><span class="exam-card__name">UGC NET</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="rajasthan.gov.in"></span><span class="exam-card__name">REET</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="dsssb.delhi.gov.in"></span><span class="exam-card__name">DSSSB TGT / PGT</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-civil" role="tabpanel" data-tabpanel="civil">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="upsc.gov.in"></span><span class="exam-card__name">UPSC CSE (IAS)</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="upsc.gov.in"></span><span class="exam-card__name">UPSC CAPF</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="upsc.gov.in"></span><span class="exam-card__name">UPSC CDS</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="india.gov.in"></span><span class="exam-card__name">State PSC</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-railways" role="tabpanel" data-tabpanel="railways">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="indianrailways.gov.in"></span><span class="exam-card__name">RRB NTPC</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="indianrailways.gov.in"></span><span class="exam-card__name">RRB Group D</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="indianrailways.gov.in"></span><span class="exam-card__name">RRB JE</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="indianrailways.gov.in"></span><span class="exam-card__name">RRB ALP</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-engineering" role="tabpanel" data-tabpanel="engineering">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="gate.iitk.ac.in"></span><span class="exam-card__name">GATE</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="ssc.nic.in"></span><span class="exam-card__name">SSC JE</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="indianrailways.gov.in"></span><span class="exam-card__name">RRB JE</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="india.gov.in"></span><span class="exam-card__name">State AE / JE</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-defence" role="tabpanel" data-tabpanel="defence">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="upsc.gov.in"></span><span class="exam-card__name">NDA</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="upsc.gov.in"></span><span class="exam-card__name">CDS</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="afcat.cdac.in"></span><span class="exam-card__name">AFCAT</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="drdo.gov.in"></span><span class="exam-card__name">DRDO</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-state-govt" role="tabpanel" data-tabpanel="state-govt">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="up.gov.in"></span><span class="exam-card__name">UPPSC</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="mppsc.mp.gov.in"></span><span class="exam-card__name">MPPSC</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="psc.uk.gov.in"></span><span class="exam-card__name">UKPSC</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="rpsc.rajasthan.gov.in"></span><span class="exam-card__name">RPSC</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-police" role="tabpanel" data-tabpanel="police">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="uppolice.gov.in"></span><span class="exam-card__name">UP Police SI</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="cisf.gov.in"></span><span class="exam-card__name">CISF Constable</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="crpf.gov.in"></span><span class="exam-card__name">CRPF Constable</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="itbpolice.nic.in"></span><span class="exam-card__name">ITBP / BSF trades</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-insurance" role="tabpanel" data-tabpanel="insurance">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="licindia.in"></span><span class="exam-card__name">LIC AAO / AE</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="licindia.in"></span><span class="exam-card__name">LIC Assistant</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="newindia.co.in"></span><span class="exam-card__name">NIACL Assistant</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="india.gov.in"></span><span class="exam-card__name">NICL AO</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-nursing" role="tabpanel" data-tabpanel="nursing">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="aiims.edu"></span><span class="exam-card__name">AIIMS NORCET</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="esic.gov.in"></span><span class="exam-card__name">ESIC Staff Nurse</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="nhm.gov.in"></span><span class="exam-card__name">Community Health Officer</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="rrcb.gov.in"></span><span class="exam-card__name">Railway Staff Nurse</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-other-govt" role="tabpanel" data-tabpanel="other-govt">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="fci.gov.in"></span><span class="exam-card__name">FCI Recruitment</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="epfindia.gov.in"></span><span class="exam-card__name">EPFO SSA / Steno</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="mha.gov.in"></span><span class="exam-card__name">Intelligence Bureau ACIO</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="navodaya.gov.in"></span><span class="exam-card__name">KVS / NVS non-teaching</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-nra-cet" role="tabpanel" data-tabpanel="nra-cet">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="nraje.gov.in"></span><span class="exam-card__name">NRA CET (Foundation)</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="nraje.gov.in"></span><span class="exam-card__name">NRA CET Graduate Level</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="nraje.gov.in"></span><span class="exam-card__name">NRA CET 10+2 Level</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-pg-entrance" role="tabpanel" data-tabpanel="pg-entrance">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="gate.iitk.ac.in"></span><span class="exam-card__name">GATE (PG)</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="gate.iitk.ac.in"></span><span class="exam-card__name">IIT JAM</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="jest.org.in"></span><span class="exam-card__name">JEST / TIFR</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-campus" role="tabpanel" data-tabpanel="campus">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="tcs.com"></span><span class="exam-card__name">TCS National Qualifier Test</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="infosys.com"></span><span class="exam-card__name">Infosys InfyTQ</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="wipro.com"></span><span class="exam-card__name">Wipro NLTH</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-marketing" role="tabpanel" data-tabpanel="marketing">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="google.com"></span><span class="exam-card__name">Digital Marketing Certification</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-mba" role="tabpanel" data-tabpanel="mba">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="iimcat.ac.in"></span><span class="exam-card__name">CAT</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="xatonline.in"></span><span class="exam-card__name">XAT</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="snaptest.org"></span><span class="exam-card__name">SNAP</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-cuet" role="tabpanel" data-tabpanel="cuet">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="cuet.samarth.ac.in"></span><span class="exam-card__name">CUET UG</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="cuet.samarth.ac.in"></span><span class="exam-card__name">CUET PG</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="ipu.ac.in"></span><span class="exam-card__name">IPU CET</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-professional-skills" role="tabpanel" data-tabpanel="professional-skills">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="microsoft.com"></span><span class="exam-card__name">Workplace Communication Skills</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-software-dev" role="tabpanel" data-tabpanel="software-dev">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="github.com"></span><span class="exam-card__name">Full Stack Developer Track</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-data-science" role="tabpanel" data-tabpanel="data-science">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="python.org"></span><span class="exam-card__name">Data Analyst Path</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="tensorflow.org"></span><span class="exam-card__name">Machine Learning Basics</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="mysql.com"></span><span class="exam-card__name">SQL for Analytics</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-accounting" role="tabpanel" data-tabpanel="accounting">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="icai.org"></span><span class="exam-card__name">CA Foundation</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="icmai.in"></span><span class="exam-card__name">CMA Foundation</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="icsi.edu"></span><span class="exam-card__name">CS Executive</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-management" role="tabpanel" data-tabpanel="management">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="aicte-india.org"></span><span class="exam-card__name">PGDM Entrance Prep</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="linkedin.com"></span><span class="exam-card__name">Human Resource Management</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="asq.org"></span><span class="exam-card__name">Operations Management</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-judiciary" role="tabpanel" data-tabpanel="judiciary">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="india.gov.in"></span><span class="exam-card__name">Assistant Prosecution Officer</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="india.gov.in"></span><span class="exam-card__name">Civil Judge (Junior Division)</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="india.gov.in"></span><span class="exam-card__name">Higher Judicial Service</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-regulatory" role="tabpanel" data-tabpanel="regulatory">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="rbi.org.in"></span><span class="exam-card__name">RBI Grade B</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="nabard.org"></span><span class="exam-card__name">NABARD Grade A</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="sebi.gov.in"></span><span class="exam-card__name">SEBI Grade A</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+
+        <div class="exam-panel" id="panel-drdo" role="tabpanel" data-tabpanel="drdo">
+          <div class="exam-grid">
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="drdo.gov.in"></span><span class="exam-card__name">DRDO STA-B</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="drdo.gov.in"></span><span class="exam-card__name">CEPTAM (Tech / Admin)</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="#" class="exam-card"><span class="exam-card__logo" data-favicon="drdo.gov.in"></span><span class="exam-card__name">DRDO Scientist Entry</span><span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+            <a href="exams.html" class="exam-card exam-card--more">Explore all exams<span class="exam-card__chevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quick">
+    <div class="container">
+      <div class="explore-lead-box">
+        <div class="explore-lead-copy">
+          <div class="explore-lead-title">घर बैठे सभी सरकारी भर्तियों के फॉर्म भरें</div>
+          <p class="explore-lead-desc">
+            सही vacancy चुनें, सही documents तैयार करें और
+            Telegram पर expert support के साथ फॉर्म सबमिट करें।
+          </p>
+        </div>
+        <a
+          href="https://t.me/WereWolfByNight0"
+          class="btn btn-teal"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          यहाँ क्लिक करें
+        </a>
+      </div>
+
+      <div class="explore-sub-box">
+        <div class="explore-sub-copy">
+          <div class="explore-sub-title"><span class="accent">फ्री ऑनलाइन टेस्ट</span> – अपनी तैयारी को अभी जांचें!</div>
+          <p class="explore-sub-desc">
+            यहाँ आपको सभी सरकारी परीक्षाओं के लिए फ्री ऑनलाइन टेस्ट मिलेंगे।
+            रोजाना प्रैक्टिस करें, अपनी तैयारी मजबूत बनाएं और सफलता की ओर कदम बढ़ाएं।
+          </p>
+          <div class="explore-sub-tagline">आज की मेहनत ही आपकी कल की सफलता है</div>
+        </div>
+        <a
+          href="exams.html#upcoming-popular"
+          class="btn btn-teal explore-sub-cta"
+        >
+          अभी टेस्ट दें
+        </a>
+      </div>
+
+      <h2>Explore</h2>
+      <p>Government exams directory और भर्ती अपडेट्स — एक ही जगह।</p>
+      <div class="quick-grid">
+        <div class="quick-card">
+          <h3>690+ Exams</h3>
+          <p>Testbook-style listing: categories, calendar, SSC tests count — सब Exams पेज पर।</p>
+          <a href="exams.html" class="btn btn-teal">Open Exams Page</a>
+        </div>
+        <div class="quick-card">
+          <h3>नई व पुरानी भर्ती</h3>
+          <p>फ़िल्टर के साथ नई / पुरानी भर्तियों की सूची।</p>
+          <a href="bharti.html" class="btn btn-teal">भर्ती देखें</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-cols">
+        <div class="footer-col">
+          <h4>Links</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="exams.html">Government Exams</a></li>
+            <li><a href="bharti.html">भर्ती</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="https://t.me/WereWolfByNight0" target="_blank" rel="noopener noreferrer">Telegram</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 SRGjobtest. All rights reserved.</span>
+        <div class="social">
+          <a href="https://t.me/WereWolfByNight0" target="_blank" rel="noopener noreferrer">Telegram</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Register Modal -->
+  <div class="modal-overlay" id="registerModal" aria-hidden="true">
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="registerTitle">
+      <div class="modal-head">
+        <div>
+          <h3 id="registerTitle">Register</h3>
+        </div>
+        <button type="button" class="modal-close" id="closeRegister" aria-label="Close">×</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="reg-hint">Mobile number डालो, OTP से verify karke register करो।</div>
+
+        <div class="reg-step active" id="regStepMobile">
+          <div class="reg-grid">
+            <div>
+              <div class="reg-label">Mobile Number</div>
+              <input
+                id="regMobile"
+                class="reg-input"
+                type="tel"
+                inputmode="numeric"
+                autocomplete="tel"
+                placeholder="जैसे: 9876543210"
+                maxlength="10"
+              />
+            </div>
+            <div class="reg-error" id="regErr"></div>
+            <div class="reg-actions">
+              <button type="button" class="btn btn-teal" id="regSendOtp">Send OTP</button>
+              <button type="button" class="btn btn-outline" id="regCancel">Cancel</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="reg-step" id="regStepOtp">
+          <div class="reg-grid">
+            <div>
+              <div class="reg-label">Enter OTP</div>
+              <input
+                id="regOtp"
+                class="reg-input"
+                type="text"
+                inputmode="numeric"
+                autocomplete="one-time-code"
+                placeholder="OTP (6 digits)"
+                maxlength="6"
+              />
+              <div class="reg-demo" id="regDemoOtp" style="display:none;"></div>
+            </div>
+            <div class="reg-error" id="regErrOtp"></div>
+            <div class="reg-actions">
+              <button type="button" class="btn btn-teal" id="regVerifyOtp">Verify & Register</button>
+              <button type="button" class="btn btn-outline" id="regResendOtp">Resend OTP</button>
+            </div>
+            <div style="color: var(--muted); font-weight: 800; font-family: 'Noto Sans Devanagari', sans-serif;">
+              <span id="regCountdown"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="reg-success" id="regSuccess">
+          <h4>Registered Successfully</h4>
+          <p>अब आप exams page पर जा सकते हो।</p>
+          <a href="exams.html" class="btn btn-teal" id="goExamsBtn">Go to Exams</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Consent Banner -->
+  <div class="cookie-banner" id="cookieBanner" role="dialog" aria-modal="false" aria-labelledby="cookieTitle">
+    <div class="cookie-inner container">
+      <div class="cookie-copy">
+        <div class="cookie-title" id="cookieTitle">Cookies</div>
+        <div class="cookie-text">हम आपकी experience improve करने के लिए cookies उपयोग करते हैं।</div>
+      </div>
+      <div class="cookie-actions">
+        <button type="button" class="btn btn-teal" id="cookieAcceptAll">Accept All</button>
+        <button type="button" class="btn btn-outline" id="cookieReject">Reject</button>
+        <button type="button" class="btn btn-outline" id="cookieManage">Settings</button>
+      </div>
+    </div>
+
+    <div class="cookie-settings container" id="cookieSettings">
+      <div class="cookie-settings-row">
+        <label class="cookie-check"><input type="checkbox" id="cookieAnalytics" checked /> Analytics</label>
+        <label class="cookie-check"><input type="checkbox" id="cookieMarketing" checked /> Marketing</label>
+      </div>
+      <div class="cookie-settings-actions">
+        <button type="button" class="btn btn-teal" id="cookieSaveSettings">Save</button>
+        <button type="button" class="btn btn-outline" id="cookieCloseSettings">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Render favicon images from `data-favicon` domains
+    (function () {
+      var logoEls = document.querySelectorAll(".exam-card__logo[data-favicon]");
+      logoEls.forEach(function (el) {
+        var domain = el.getAttribute("data-favicon");
+        if (!domain) return;
+        var url = "https://www.google.com/s2/favicons?domain=" + encodeURIComponent(domain) + "&sz=64";
+        el.innerHTML =
+          '<img class="favicon-img" alt="" src="' +
+          url +
+          '" loading="lazy" referrerpolicy="no-referrer" />';
+      });
+    })();
+
+    // Tab switching for exam categories
+    (function () {
+      var tabs = document.querySelectorAll(".exam-tabs button[data-tab]");
+      var panels = document.querySelectorAll(".exam-panels .exam-panel[data-tabpanel]");
+      tabs.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var id = btn.getAttribute("data-tab");
+          tabs.forEach(function (b) {
+            var on = b === btn;
+            b.classList.toggle("active", on);
+            b.setAttribute("aria-selected", on ? "true" : "false");
+          });
+          panels.forEach(function (p) {
+            p.classList.toggle("active", p.getAttribute("data-tabpanel") === id);
+          });
+        });
+      });
+    })();
+
+    // Register modal: Mobile -> OTP -> Register
+    (function () {
+      var DEMO_MODE = true; // Demo OTP show hota hai. Real SMS integration ke liye DEMO_MODE false karna.
+
+      var openBtn = document.getElementById("openRegister");
+      var modal = document.getElementById("registerModal");
+      var closeBtn = document.getElementById("closeRegister");
+      var cancelBtn = document.getElementById("regCancel");
+
+      var stepMobile = document.getElementById("regStepMobile");
+      var stepOtp = document.getElementById("regStepOtp");
+      var stepSuccess = document.getElementById("regSuccess");
+
+      var mobileInput = document.getElementById("regMobile");
+      var otpInput = document.getElementById("regOtp");
+      var err = document.getElementById("regErr");
+      var errOtp = document.getElementById("regErrOtp");
+      var demoOtpEl = document.getElementById("regDemoOtp");
+
+      var sendBtn = document.getElementById("regSendOtp");
+      var verifyBtn = document.getElementById("regVerifyOtp");
+      var resendBtn = document.getElementById("regResendOtp");
+
+      var countdownEl = document.getElementById("regCountdown");
+
+      var generatedOtp = null;
+      var registeredMobile = null;
+      var countdown = 0;
+      var timerId = null;
+
+      var resetModalSteps = function () {
+        err.textContent = "";
+        errOtp.textContent = "";
+        otpInput.value = "";
+        generatedOtp = null;
+        demoOtpEl.style.display = "none";
+        demoOtpEl.textContent = "";
+        countdownEl.textContent = "";
+        resendBtn.disabled = false;
+        if (timerId) {
+          clearInterval(timerId);
+          timerId = null;
+        }
+
+        stepSuccess.classList.remove("active");
+        stepOtp.classList.remove("active");
+        stepMobile.classList.add("active");
+      };
+
+      var openModal = function () {
+        modal.classList.add("open");
+        modal.setAttribute("aria-hidden", "false");
+        resetModalSteps();
+        setTimeout(function () {
+          mobileInput.focus();
+        }, 50);
+      };
+
+      var closeModal = function () {
+        modal.classList.remove("open");
+        modal.setAttribute("aria-hidden", "true");
+      };
+
+      var validateMobile = function (v) {
+        var s = (v || "").trim();
+        return /^\d{10}$/.test(s);
+      };
+
+      var startCountdown = function (seconds) {
+        countdown = seconds;
+        resendBtn.disabled = true;
+        countdownEl.textContent = "Resend OTP after " + countdown + "s";
+        if (timerId) clearInterval(timerId);
+        timerId = setInterval(function () {
+          countdown -= 1;
+          if (countdown <= 0) {
+            countdown = 0;
+            resendBtn.disabled = false;
+            countdownEl.textContent = "";
+            clearInterval(timerId);
+            timerId = null;
+            return;
+          }
+          countdownEl.textContent = "Resend OTP after " + countdown + "s";
+        }, 1000);
+      };
+
+      var sendOtp = function () {
+        err.textContent = "";
+        errOtp.textContent = "";
+
+        var mobile = (mobileInput.value || "").trim();
+        if (!validateMobile(mobile)) {
+          err.textContent = "कृपया 10-digit Mobile number डालें।";
+          return;
+        }
+
+        registeredMobile = mobile;
+
+        // DEMO: OTP generate
+        generatedOtp = String(Math.floor(100000 + Math.random() * 900000));
+
+        if (DEMO_MODE) {
+          demoOtpEl.style.display = "block";
+          demoOtpEl.textContent = "Demo OTP: " + generatedOtp;
+        } else {
+          demoOtpEl.style.display = "none";
+        }
+
+        stepMobile.classList.remove("active");
+        stepOtp.classList.add("active");
+        otpInput.focus();
+
+        startCountdown(60);
+
+        // TODO: Real integration:
+        // fetch('/api/send-otp', { method:'POST', body: JSON.stringify({mobile}) })
+        //   .then(...)
+      };
+
+      var verifyOtp = function () {
+        errOtp.textContent = "";
+        var otp = (otpInput.value || "").trim();
+        if (!/^\d{6}$/.test(otp)) {
+          errOtp.textContent = "OTP 6 digits का होना चाहिए।";
+          return;
+        }
+
+        if (!generatedOtp || otp !== generatedOtp) {
+          errOtp.textContent = "OTP गलत है, फिर से try करें।";
+          return;
+        }
+
+        // TODO: Real registration:
+        // fetch('/api/register', { method:'POST', body: JSON.stringify({mobile: registeredMobile, otp}) })
+        //   .then(...)
+
+        try {
+          localStorage.setItem("srgjobtest_registered", registeredMobile || "");
+        } catch (e) {}
+
+        stepOtp.classList.remove("active");
+        stepSuccess.classList.add("active");
+      };
+
+      var attach = function () {
+        if (openBtn) openBtn.addEventListener("click", openModal);
+        if (closeBtn) closeBtn.addEventListener("click", closeModal);
+        if (cancelBtn) cancelBtn.addEventListener("click", closeModal);
+
+        if (modal) {
+          modal.addEventListener("click", function (e) {
+            if (e.target === modal) closeModal();
+          });
+        }
+
+        sendBtn.addEventListener("click", sendOtp);
+        verifyBtn.addEventListener("click", verifyOtp);
+        resendBtn.addEventListener("click", sendOtp);
+
+        document.addEventListener("keydown", function (e) {
+          if (!modal.classList.contains("open")) return;
+          if (e.key === "Escape") closeModal();
+        });
+      };
+
+      attach();
+    })();
+  </script>
+
+  <script>
+    // Cookie consent (demo front-end only)
+    (function () {
+      var KEY = "srgjobtest_cookie_consent_v1";
+
+      var banner = document.getElementById("cookieBanner");
+      if (!banner) return;
+
+      var settingsBox = document.getElementById("cookieSettings");
+      var analyticsCb = document.getElementById("cookieAnalytics");
+      var marketingCb = document.getElementById("cookieMarketing");
+
+      var acceptAllBtn = document.getElementById("cookieAcceptAll");
+      var rejectBtn = document.getElementById("cookieReject");
+      var manageBtn = document.getElementById("cookieManage");
+      var saveBtn = document.getElementById("cookieSaveSettings");
+      var closeSettingsBtn = document.getElementById("cookieCloseSettings");
+
+      var stored = null;
+      try {
+        stored = localStorage.getItem(KEY);
+      } catch (e) {}
+
+      if (stored) {
+        banner.classList.remove("open");
+        return;
+      }
+
+      var openBanner = function () {
+        banner.classList.add("open");
+      };
+
+      var hideBanner = function () {
+        banner.classList.remove("open");
+        if (settingsBox) settingsBox.classList.remove("open");
+      };
+
+      var saveConsent = function (prefs) {
+        var payload = {
+          necessary: true,
+          analytics: !!prefs.analytics,
+          marketing: !!prefs.marketing
+        };
+        try {
+          localStorage.setItem(KEY, JSON.stringify(payload));
+        } catch (e) {}
+        hideBanner();
+      };
+
+      // default: show banner
+      openBanner();
+
+      if (acceptAllBtn) {
+        acceptAllBtn.addEventListener("click", function () {
+          saveConsent({ analytics: true, marketing: true });
+        });
+      }
+
+      if (rejectBtn) {
+        rejectBtn.addEventListener("click", function () {
+          saveConsent({ analytics: false, marketing: false });
+        });
+      }
+
+      if (manageBtn && settingsBox) {
+        manageBtn.addEventListener("click", function () {
+          settingsBox.classList.add("open");
+        });
+      }
+
+      if (closeSettingsBtn && settingsBox) {
+        closeSettingsBtn.addEventListener("click", function () {
+          settingsBox.classList.remove("open");
+        });
+      }
+
+      if (saveBtn) {
+        saveBtn.addEventListener("click", function () {
+          saveConsent({
+            analytics: analyticsCb && analyticsCb.checked,
+            marketing: marketingCb && marketingCb.checked
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
